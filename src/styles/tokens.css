@@ -1,0 +1,63 @@
+:root {
+	color-scheme: light dark;
+	--bg: #0f172a;
+	--bg-soft: #020617;
+	--card: #ffffff;
+	--card-muted: #f8fafc;
+	--accent: #22c55e;
+	--accent-dark: #16a34a;
+	--accent-soft: #bbf7d0;
+	--text-main: #0f172a;
+	--text-muted: #475569;
+	--text-soft: #64748b;
+	--error: #dc2626;
+	--border: #e2e8f0;
+	--border-subtle: rgba(148, 163, 184, 0.25);
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+	/* Breakpoints */
+	--bp-mobile: 320px;
+	--bp-tablet: 768px;
+	--bp-desktop: 1024px;
+
+	/* Desktop content width (1000px–1200px range) */
+	--content-max-desktop: 72rem; /* 1152px */
+
+	/* Touch target (WCAG 2.5.5) */
+	--touch-target: 44px;
+
+	/* Spacing scale (8px base) */
+	--space-xs: 0.25rem;
+	--space-sm: 0.5rem;
+	--space-md: 0.75rem;
+	--space-lg: 1rem;
+	--space-xl: 1.25rem;
+	--space-2xl: 1.5rem;
+	--space-3xl: 2rem;
+	--space-4xl: 2.5rem;
+	--space-5xl: 3rem;
+
+	/* Typography scale */
+	--text-display: clamp(1.5rem, 4.5vw + 1rem, 2.25rem);
+	--text-title: 1.25rem;
+	--text-lead: 1.0625rem;
+	--text-body: 1rem;
+	--text-small: 0.875rem;
+	--text-caption: 0.8125rem;
+	--text-overline: 0.75rem;
+	--leading-tight: 1.2;
+	--leading-snug: 1.35;
+	--leading-normal: 1.5;
+	--leading-relaxed: 1.625;
+	--tracking-tight: -0.025em;
+	--tracking-wide: 0.08em;
+
+	/* Radius */
+	--radius-sm: 0.5rem;
+	--radius-md: 0.75rem;
+	--radius-lg: 1rem;
+	--radius-xl: 1.25rem;
+	--radius-2xl: 1.5rem;
+	--radius-full: 9999px;
+}
+

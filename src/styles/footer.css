@@ -1,0 +1,16 @@
+.app-footer {
+	margin-top: var(--space-4xl);
+	padding: var(--space-2xl) 0 0;
+	text-align: center;
+	font-size: var(--text-caption);
+	line-height: var(--leading-relaxed);
+	color: var(--text-soft);
+	max-width: 42ch;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.app-footer span {
+	display: inline;
+}
+

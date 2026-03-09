@@ -1,0 +1,35 @@
+---
+interface Props {
+	titleId?: string;
+}
+const { titleId = 'page-title' } = Astro.props;
+---
+<article class="app-card" aria-labelledby={titleId}>
+	<header class="app-header">
+		<div>
+			<div class="badge" aria-hidden="true">
+				<span class="badge-dot"></span>
+				<span data-i18n-key="badge">Open WhatsApp in one step</span>
+			</div>
+			<h1 id={titleId} data-i18n-key="header_title">
+				Send a WhatsApp without saving the number
+			</h1>
+			<p data-i18n-key="header_subtitle">
+				Write the phone number and press the button to open WhatsApp without saving the
+				contact.
+			</p>
+		</div>
+		<div class="language-switcher" role="group" aria-label="Change language">
+			<span class="language-switcher-label" data-i18n-key="lang_label">Language</span>
+			<div class="language-switcher-buttons">
+				<button type="button" class="language-button" data-lang="en" aria-pressed="true">
+					<span data-i18n-key="lang_en">English</span>
+				</button>
+				<button type="button" class="language-button" data-lang="es" aria-pressed="false">
+					<span data-i18n-key="lang_es">Español</span>
+				</button>
+			</div>
+		</div>
+	</header>
+	<slot />
+</article>

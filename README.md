@@ -1,43 +1,91 @@
-# Astro Starter Kit: Minimal
+# WhatsApp Link Generator 💬
 
-```sh
-pnpm create astro@latest -- --template minimal
+A small web app that lets you open a WhatsApp chat with any phone number without adding it to your contacts. Enter the number, choose a country, and open the conversation in one click—on phone or desktop.
+
+## Description
+
+WhatsApp Link Generator builds a `wa.me` link from the country and number you enter. You can optionally add a pre-filled message. No account or backend: everything runs in the browser. Your data is not stored or sent to any server.
+
+## Demo
+
+**[Live demo](#)** — https://openchatnow.com
+
+## Tech Stack
+
+- **[Astro](https://astro.build)** — Static site generation and composition
+- **TypeScript** — Typed logic, validation, and i18n
+- **Vanilla CSS** — Modular styles (tokens, layout, components), no framework
+- **Client-side only** — No server runtime; build outputs static HTML, CSS, and JS
+
+## Project Structure
+
 ```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
+whatsapp-link-generator/
+├── public/              # Static assets (favicon, etc.)
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/      # Astro components (AppCard, WhatsAppForm, FAQ)
+│   ├── data/            # Static data (countries, meta) and constants
+│   ├── i18n/            # Translation strings (EN, ES)
+│   ├── lib/             # Pure utilities (phone normalization, URL builder, storage)
+│   ├── pages/           # Astro pages (single entry: index.astro)
+│   ├── scripts/         # Client-side TS (form logic, validation, language switcher)
+│   ├── styles/          # CSS modules (tokens, layout, form, card, responsive)
+│   └── types/           # TypeScript types (language, i18n keys)
+├── astro.config.mjs
+├── package.json
+└── tsconfig.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Installation
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Clone the repo and install dependencies (Node 18+ recommended):
 
-Any static assets, like images, can be placed in the `public/` directory.
+```bash
+git clone https://github.com/your-username/whatsapp-link-generator.git
+cd whatsapp-link-generator
+pnpm install
+```
 
-## 🧞 Commands
+Start the dev server:
 
-All commands are run from the root of the project, from a terminal:
+```bash
+pnpm dev
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+Open [http://localhost:4321](http://localhost:4321) in your browser.
 
-## 👀 Want to learn more?
+Build for production:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```bash
+pnpm build
+pnpm preview   # optional: preview the built site locally
+```
+
+## Usage
+
+1. Select your **country** from the dropdown.
+2. Enter the **phone number** (without country code); only digits are accepted.
+3. Optionally type a **message** that will appear in the chat.
+4. Click **Open WhatsApp**. A new tab opens with the `wa.me` link; on mobile it opens the WhatsApp app if installed.
+
+The app may suggest a country based on your IP (via a third-party API) and remembers your last country and language in `localStorage`.
+
+## Contributing
+
+Contributions are welcome. To propose a change:
+
+1. Fork the repository.
+2. Create a branch from `main` for your feature or fix.
+3. Make your changes; keep the existing structure (types, i18n, modular styles).
+4. Run `pnpm build` to ensure the project builds.
+5. Open a pull request with a short description of what changed and why.
+
+For new languages or countries, add entries in `src/i18n/translations.ts` and `src/data/countries.ts` respectively.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Author
+
+**Kevin Tapia** ❤️

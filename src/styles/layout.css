@@ -1,0 +1,12 @@
+/* Page container: single column, narrow on mobile/tablet */
+.page-main {
+	width: 100%;
+	max-width: 28rem;
+	margin: 0 auto;
+	padding: 0 var(--space-md);
+}
+
+.page-content {
+	width: 100%;
+}
+

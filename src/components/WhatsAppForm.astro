@@ -1,0 +1,67 @@
+---
+import { COUNTRIES } from '../data/countries.js';
+---
+<section class="app-form" aria-label="Send WhatsApp message">
+	<form id="whatsapp-form" class="whatsapp-form" novalidate>
+		<fieldset>
+			<legend data-i18n-key="phone_legend">Phone number</legend>
+			<p class="helper-text" data-i18n-key="phone_helper">
+				First choose the country, then type the phone number.
+			</p>
+			<div class="form-row">
+				<div class="field-country">
+					<label for="country" data-i18n-key="country_label">Country</label>
+					<select id="country" name="country" required>
+						<option value="">Select country</option>
+						{COUNTRIES.map((c) => (
+							<option value={c.code} data-dial={c.dialCode}>
+								{c.label}
+							</option>
+						))}
+					</select>
+				</div>
+				<div class="field-phone">
+					<label for="phone" data-i18n-key="phone_label">Phone number</label>
+					<input
+						id="phone"
+						name="phone"
+						type="tel"
+						inputmode="tel"
+						autocomplete="tel"
+						required
+						aria-describedby="phone-hint phone-error"
+						placeholder="Example: 5551234567"
+						data-i18n-key="phone_placeholder"
+					/>
+				</div>
+			</div>
+			<p id="phone-hint" class="hint-text" data-i18n-key="phone_hint">
+				Numbers only. Do not write the country code.
+			</p>
+			<p id="phone-error" class="error-text" aria-live="polite"></p>
+		</fieldset>
+		<div>
+			<label for="message" data-i18n-key="message_label">Optional message</label>
+			<textarea
+				id="message"
+				name="message"
+				rows="3"
+				aria-describedby="message-hint"
+				placeholder="Write a short message that will appear ready in WhatsApp."
+				data-i18n-key="message_placeholder"
+			></textarea>
+			<p id="message-hint" class="hint-text" data-i18n-key="message_hint">
+				You can leave this empty if you prefer to write the message directly in WhatsApp.
+			</p>
+		</div>
+		<button
+			id="open-whatsapp"
+			type="button"
+			class="button-primary"
+			aria-label="Open WhatsApp chat in a new tab"
+		>
+			<span class="icon" aria-hidden="true">💬</span>
+			<span data-i18n-key="button_label">Open WhatsApp</span>
+		</button>
+	</form>
+</section>

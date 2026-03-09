@@ -1,0 +1,149 @@
+/* Tablet: 768px+ — slightly wider, same single column */
+@media (min-width: 768px) {
+	body {
+		padding: var(--space-4xl) var(--space-2xl);
+	}
+
+	.page-main {
+		max-width: 32rem;
+		padding: 0 var(--space-lg);
+	}
+
+	.app-card {
+		padding: var(--space-5xl) var(--space-3xl);
+		border-radius: var(--radius-2xl);
+	}
+
+	.app-header {
+		margin-bottom: var(--space-3xl);
+		gap: var(--space-2xl);
+	}
+
+	.form-row {
+		flex-direction: row;
+		gap: var(--space-lg);
+	}
+
+	.field-country {
+		flex: 1.25 1 0;
+	}
+
+	.field-phone {
+		flex: 1.75 1 0;
+	}
+
+	.faq {
+		margin-top: var(--space-5xl);
+		padding-top: var(--space-4xl);
+	}
+
+	.app-footer {
+		margin-top: var(--space-5xl);
+		padding-top: var(--space-3xl);
+	}
+}
+
+/* Desktop: 1024px+ — wide layout, two-column card */
+@media (min-width: 1024px) {
+	body {
+		padding: var(--space-5xl) var(--space-3xl);
+	}
+
+	.page-main {
+		max-width: var(--content-max-desktop);
+		padding: 0 var(--space-2xl);
+	}
+
+	.page-content {
+		width: 100%;
+	}
+
+	/* Single card with CSS Grid: full-width header, then form | FAQ */
+	.app-card {
+		display: grid;
+		grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+		gap: var(--space-4xl) var(--space-5xl);
+		padding: var(--space-5xl) var(--space-4xl);
+		align-items: start;
+	}
+
+	.app-header {
+		grid-column: 1 / -1;
+		margin-bottom: 0;
+		padding-bottom: var(--space-2xl);
+		border-bottom: 1px solid var(--border-subtle);
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: flex-end;
+		gap: var(--space-xl);
+	}
+
+	.app-header > div:first-child {
+		flex: 1 1 20rem;
+	}
+
+	/* Larger hero typography on desktop */
+	.app-card header h1 {
+		font-size: clamp(2rem, 2.5vw, 2.5rem);
+		letter-spacing: -0.03em;
+		line-height: 1.15;
+	}
+
+	.app-card header p {
+		font-size: 1.125rem;
+		line-height: 1.6;
+		max-width: 42ch;
+	}
+
+	/* Primary column: form */
+	.app-form {
+		grid-column: 1;
+		min-width: 0;
+	}
+
+	/* Secondary column: FAQ sidebar */
+	.faq {
+		grid-column: 2;
+		margin-top: 0;
+		padding-top: 0;
+		padding-left: var(--space-4xl);
+		border-top: none;
+		border-left: 1px solid var(--border-subtle);
+	}
+
+	.faq-title {
+		font-size: var(--text-overline);
+		margin-bottom: var(--space-xl);
+		letter-spacing: var(--tracking-wide);
+	}
+
+	.faq-question {
+		font-size: var(--text-body);
+		font-weight: 600;
+	}
+
+	.faq-answer {
+		font-size: var(--text-small);
+		line-height: 1.55;
+	}
+
+	.faq-item + .faq-item {
+		margin-top: var(--space-2xl);
+	}
+
+	/* Button: centered in form column */
+	.whatsapp-form .button-primary {
+		width: auto;
+		min-width: 14rem;
+		justify-self: start;
+		padding: var(--space-md) var(--space-2xl);
+	}
+
+	/* Footer: full-width below card, more whitespace */
+	.app-footer {
+		margin-top: var(--space-5xl);
+		padding-top: var(--space-4xl);
+		max-width: none;
+	}
+}

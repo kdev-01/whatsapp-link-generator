@@ -1,17 +1,39 @@
 ---
-
+import "../styles/global.css";
+import { PAGE_META } from "../data/meta.js";
+import AppCard from "../components/AppCard.astro";
+import WhatsAppForm from "../components/WhatsAppForm.astro";
+import FAQ from "../components/FAQ.astro";
+import whatsappFormScript from "../scripts/whatsapp-form.ts?url";
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>{PAGE_META.title}</title>
+		<meta name="description" content={PAGE_META.description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={PAGE_META.title} />
+		<meta property="og:description" content={PAGE_META.description} />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<main class="page-main">
+			<div class="page-content">
+				<AppCard>
+					<WhatsAppForm />
+					<FAQ />
+				</AppCard>
+			</div>
+			<footer class="app-footer">
+				<span data-i18n-key="footer_note">
+					Made to help you send quick WhatsApp messages without
+					filling your contacts list.
+				</span>
+			</footer>
+		</main>
+		<script type="module" src={whatsappFormScript}></script>
 	</body>
 </html>
