@@ -4,7 +4,6 @@ import { PAGE_META } from "../data/meta";
 import AppCard from "../components/AppCard.astro";
 import WhatsAppForm from "../components/WhatsAppForm.astro";
 import FAQ from "../components/FAQ.astro";
-import whatsappFormScript from "../scripts/whatsapp-form.ts?url";
 ---
 
 <html lang="en">
@@ -34,6 +33,8 @@ import whatsappFormScript from "../scripts/whatsapp-form.ts?url";
 				</span>
 			</footer>
 		</main>
-		<script type="module" src={whatsappFormScript}></script>
+		<script>
+			import "../scripts/whatsapp-form";
+		</script>
 	</body>
 </html>
