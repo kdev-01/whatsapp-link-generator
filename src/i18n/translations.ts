@@ -1,5 +1,5 @@
-import type { SupportedLanguage } from '../types/language.js';
-import type { TranslationMap, TranslationsByLanguage } from '../types/i18n.js';
+import type { SupportedLanguage } from '../types/language';
+import type { TranslationMap, TranslationsByLanguage } from '../types/i18n';
 
 const ENGLISH: TranslationMap = {
 	badge: 'Open WhatsApp in one step',

@@ -1,3 +1,3 @@
-export type { TextKey, TranslationMap, TranslationsByLanguage } from './i18n.js';
-export type { SupportedLanguage } from './language.js';
-export { isSupportedLanguage } from './language.js';
+export type { TextKey, TranslationMap, TranslationsByLanguage } from './i18n';
+export type { SupportedLanguage } from './language';
+export { isSupportedLanguage } from './language';

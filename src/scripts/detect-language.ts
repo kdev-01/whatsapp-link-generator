@@ -1,6 +1,6 @@
-import type { SupportedLanguage } from '../types/language.js';
-import { isSupportedLanguage } from '../types/language.js';
-import { getStoredLanguage, setStoredLanguage } from '../lib/storage.js';
+import type { SupportedLanguage } from '../types/language';
+import { isSupportedLanguage } from '../types/language';
+import { getStoredLanguage, setStoredLanguage } from '../lib/storage';
 
 /** Detects preferred language from browser (navigator.languages / navigator.language). */
 export function detectBrowserLanguage(): SupportedLanguage {

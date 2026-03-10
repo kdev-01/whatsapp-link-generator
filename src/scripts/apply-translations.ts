@@ -1,6 +1,6 @@
-import type { SupportedLanguage } from '../types/language.js';
-import type { TextKey } from '../types/i18n.js';
-import { getTranslations } from '../i18n/translations.js';
+import type { SupportedLanguage } from '../types/language';
+import type { TextKey } from '../types/i18n';
+import { getTranslations } from '../i18n/translations';
 
 const PLACEHOLDER_KEYS: ReadonlySet<TextKey> = new Set(['phone_placeholder', 'message_placeholder']);
 

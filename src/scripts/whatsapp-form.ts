@@ -1,16 +1,16 @@
-import type { SupportedLanguage } from '../types/language.js';
-import { isSupportedLanguage } from '../types/language.js';
-import { getCurrentLanguage } from './detect-language.js';
-import { initLanguageSwitcher } from './language-switcher.js';
-import { initCountrySelect } from './country-init.js';
+import type { SupportedLanguage } from '../types/language';
+import { isSupportedLanguage } from '../types/language';
+import { getCurrentLanguage } from './detect-language';
+import { initLanguageSwitcher } from './language-switcher';
+import { initCountrySelect } from './country-init';
 import {
 	validateForm,
 	getFullPhoneDigits,
 	type FormElements,
-} from './form-validation.js';
-import { setStoredCountry } from '../lib/storage.js';
-import { normalisePhone } from '../lib/phone.js';
-import { buildWhatsAppUrl } from '../lib/whatsapp-url.js';
+} from './form-validation';
+import { setStoredCountry } from '../lib/storage';
+import { normalisePhone } from '../lib/phone';
+import { buildWhatsAppUrl } from '../lib/whatsapp-url';
 
 const FORM_ID = 'whatsapp-form';
 const COUNTRY_ID = 'country';

@@ -1,7 +1,7 @@
-import type { SupportedLanguage } from '../types/language.js';
-import { getTranslations } from '../i18n/translations.js';
-import { getDialCodeForCountry } from '../data/countries.js';
-import { normalisePhone, isValidPhoneLength } from '../lib/phone.js';
+import type { SupportedLanguage } from '../types/language';
+import { getTranslations } from '../i18n/translations';
+import { getDialCodeForCountry } from '../data/countries';
+import { normalisePhone, isValidPhoneLength } from '../lib/phone';
 
 export interface FormElements {
 	countrySelect: HTMLSelectElement;

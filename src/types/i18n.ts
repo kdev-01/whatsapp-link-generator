@@ -1,4 +1,4 @@
-import type { SupportedLanguage } from './language.js';
+import type { SupportedLanguage } from './language';
 
 /** Keys for translatable UI strings. */
 export type TextKey =

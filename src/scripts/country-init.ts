@@ -1,8 +1,8 @@
-import { getStoredCountry, setStoredCountry } from '../lib/storage.js';
-import { getDialCodeForCountry, DEFAULT_COUNTRY_CODE } from '../data/countries.js';
-import type { FormElements } from './form-validation.js';
-import { validateForm } from './form-validation.js';
-import type { SupportedLanguage } from '../types/language.js';
+import { getStoredCountry, setStoredCountry } from '../lib/storage';
+import { getDialCodeForCountry, DEFAULT_COUNTRY_CODE } from '../data/countries';
+import type { FormElements } from './form-validation';
+import { validateForm } from './form-validation';
+import type { SupportedLanguage } from '../types/language';
 
 const GEO_API_URL = 'https://ipapi.co/json/';
 

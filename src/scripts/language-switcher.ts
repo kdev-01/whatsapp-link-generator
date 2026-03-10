@@ -1,6 +1,6 @@
-import type { SupportedLanguage } from '../types/language.js';
-import { persistLanguage } from './detect-language.js';
-import { applyTranslations } from './apply-translations.js';
+import type { SupportedLanguage } from '../types/language';
+import { persistLanguage } from './detect-language';
+import { applyTranslations } from './apply-translations';
 
 /** Wires language buttons and applies initial translations. */
 export function initLanguageSwitcher(currentLang: SupportedLanguage): void {
