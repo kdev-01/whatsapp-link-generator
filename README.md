@@ -70,6 +70,23 @@ pnpm preview   # optional: preview the built site locally
 
 The app may suggest a country based on your IP (via a third-party API) and remembers your last country and language in `localStorage`.
 
+## Ezoic Ads Setup (Astro + Vercel)
+
+- Header scripts are injected at the top of `src/pages/index.astro` (CMP + `sa.min.js` + analytics).
+- `ads.txt` is served via redirect in `vercel.json` to Ezoic Ads.txt Manager.
+- Ad placeholders are configured from `PUBLIC_EZOIC_PLACEHOLDER_IDS` (comma-separated).
+
+Set your placement IDs in Vercel Project Settings -> Environment Variables:
+
+```bash
+PUBLIC_EZOIC_PLACEHOLDER_IDS=101,102,103
+```
+
+Then redeploy and verify:
+
+1. `https://openchatnow.com/ads.txt` resolves and shows seller lines.
+2. Test with `?ez_js_debugger=1` and confirm head scripts, consent, ad request, and placeholders.
+
 ## Contributing
 
 Contributions are welcome. To propose a change:

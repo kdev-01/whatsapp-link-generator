@@ -4,6 +4,11 @@ import { PAGE_META } from "../data/meta";
 import AppCard from "../components/AppCard.astro";
 import WhatsAppForm from "../components/WhatsAppForm.astro";
 import FAQ from "../components/FAQ.astro";
+
+const ezoicPlacementIds = (import.meta.env.PUBLIC_EZOIC_PLACEHOLDER_IDS ?? "")
+	.split(",")
+	.map((value: string) => Number.parseInt(value.trim(), 10))
+	.filter((value: number) => Number.isFinite(value));
 ---
 
 <html lang="en">
@@ -32,7 +37,6 @@ import FAQ from "../components/FAQ.astro";
 		<meta property="og:title" content={PAGE_META.title} />
 		<meta property="og:description" content={PAGE_META.description} />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="google-adsense-account" content="ca-pub-8965147437983317" />
 	</head>
 	<body>
 		<main class="page-main">
@@ -49,6 +53,19 @@ import FAQ from "../components/FAQ.astro";
 				</span>
 			</footer>
 		</main>
+		{
+			ezoicPlacementIds.map((placementId: number) => (
+				<div id={`ezoic-pub-ad-placeholder-${placementId}`}></div>
+			))
+		}
+		<script define:vars={{ ezoicPlacementIds }}>
+			const ezoicWindow = window;
+			ezoicWindow.ezstandalone = ezoicWindow.ezstandalone || {};
+			ezoicWindow.ezstandalone.cmd = ezoicWindow.ezstandalone.cmd || [];
+			ezoicWindow.ezstandalone.cmd.push(() => {
+				ezoicWindow.ezstandalone.showAds(...ezoicPlacementIds);
+			});
+		</script>
 		<script>
 			import "../scripts/whatsapp-form";
 		</script>
