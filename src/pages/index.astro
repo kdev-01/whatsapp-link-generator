@@ -8,9 +8,13 @@ import FAQ from "../components/FAQ.astro";
 
 <html lang="en">
 	<head>
-		<script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"></script>
-		<script data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js"></script>
-		<script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
+		<script
+			data-cfasync="false"
+			src="https://cmp.gatekeeperconsent.com/min.js"></script>
+		<script
+			data-cfasync="false"
+			src="https://the.gatekeeperconsent.com/cmp.min.js"></script>
+		<script async src="https://www.ezojs.com/ezoic/sa.min.js"></script>
 		<script>
 			const ezoicWindow = window as Window & {
 				ezstandalone?: { cmd?: unknown[] };
@@ -18,7 +22,7 @@ import FAQ from "../components/FAQ.astro";
 			ezoicWindow.ezstandalone = ezoicWindow.ezstandalone || {};
 			ezoicWindow.ezstandalone.cmd = ezoicWindow.ezstandalone.cmd || [];
 		</script>
-		<script src="//ezoicanalytics.com/analytics.js"></script>
+		<script src="https://ezoicanalytics.com/analytics.js"></script>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
